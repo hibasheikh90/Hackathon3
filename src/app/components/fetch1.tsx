@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -6,9 +7,11 @@ import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { useCart } from "@/app/CartContext/CartContext";
 import { useWishlist } from "@/app/wishlistcontext/page";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { ToastContainer, toast } from "react-toastify"; // Toastify
+import "react-toastify/dist/ReactToastify.css"; // Toastify styles
 
 // Define product interface
 interface Product {
@@ -137,16 +140,20 @@ const Fetch1: React.FC = () => {
 
                 {/* Add to Cart Button */}
                 <button
-                  onClick={() =>
+                  onClick={() => {
                     addToCart({
                       ...product,
                       slug: product.slug.current,
                       quantity: 1,
-                    })
-                  }
+                    });
+                    toast.success(`"${product.title}" added to your cart!`, {
+                      position: "top-right",
+                      autoClose: 3000,
+                    });
+                  }}
                   className="bg-[#2A254B] text-white px-4 py-2 rounded hover:bg-violet-900 transition-colors"
                 >
-                  Add to Cart
+                  <MdOutlineShoppingCart />
                 </button>
               </div>
             </div>

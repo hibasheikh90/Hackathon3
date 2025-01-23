@@ -8,6 +8,7 @@ import { useCart } from "@/app/CartContext/CartContext";
 import { useWishlist } from "@/app/wishlistcontext/page"; // Wishlist Context
 import { ToastContainer, toast } from "react-toastify"; // Toastify
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"; // Icons
+import { MdOutlineShoppingCart } from "react-icons/md"; // Shopping Cart Icon
 import "react-toastify/dist/ReactToastify.css"; // Toastify styles
 
 interface Product {
@@ -146,7 +147,7 @@ const Fetch3: React.FC = () => {
                 onClick={() => handleAddToCart(product)}
                 className="bg-[#2A254B] text-white px-4 py-2 rounded hover:bg-[#2A254B] transition"
               >
-                Add to Cart
+                <MdOutlineShoppingCart />
               </button>
               <button
                 onClick={() => toggleWishlist(product)}

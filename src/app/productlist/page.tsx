@@ -10,6 +10,7 @@ import { useWishlist } from "@/app/wishlistcontext/page"; // Import useWishlist 
 import { ToastContainer, toast } from "react-toastify"; // Import Toastify
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"; // Wishlist icons
+import { MdOutlineShoppingCart } from "react-icons/md"; // Shopping cart icon
 
 interface Product {
   title: string;
@@ -168,7 +169,7 @@ const Page: React.FC = () => {
                     onClick={() => handleAddToCart(product)}
                     className="bg-[#2A254B] text-white px-4 py-2 mt-4 rounded hover:bg-[#3b3660] "
                   >
-                    Add to Cart
+                    <MdOutlineShoppingCart />
                   </button>
                 </div>
               </div>

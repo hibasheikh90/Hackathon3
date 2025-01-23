@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useCart } from "@/app/CartContext/CartContext"; // Import your Cart Context
 import { useWishlist } from "@/app/wishlistcontext/page"; // Import the Wishlist Context
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"; // Wishlist Icons
+import { MdOutlineShoppingCart } from "react-icons/md"; // Shopping Cart Icon
 import { Toaster, toast } from "react-hot-toast"; // Import toast for notifications
 import "react-toastify/dist/ReactToastify.css"; // Import styles for the toast
 
@@ -166,7 +167,7 @@ const Fetch2: React.FC = () => {
                     onClick={() => handleAddToCart(product)}
                     className="flex items-center justify-center gap-2 bg-[#2A254B] text-white px-4 py-2 rounded hover:bg-violet-950 transition-colors"
                   >
-                    Add to Cart
+                    <MdOutlineShoppingCart />
                   </button>
 
                   <button
