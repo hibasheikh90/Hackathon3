@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import React from "react";
 import {
@@ -11,38 +12,23 @@ import {
 
 const Footer = () => {
   return (
-    <div className="bg-[#2A254B] py-10">
+    <footer className="bg-[#2A254B] py-8">
       {/* Grid layout for sections */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-5 sm:px-20">
         {/* Menu Section */}
         <div>
           <h1 className="text-white text-lg font-semibold">Menu</h1>
           <ul className="mt-4 space-y-2 text-sm text-white">
-            <li>New arrivals</li>
-            <li>Best seller</li>
-            <li>Recently Viewed</li>
             <li>
-              <Link href="/product" className="hover:underline">
-                Popular this week
+              <Link href="/product">
+                <span className="hover:underline cursor-pointer">Popular this week</span>
               </Link>
             </li>
             <li>
-              <Link href="/productlist" className="hover:underline">
-                All Products
+              <Link href="/productlist">
+                <span className="hover:underline cursor-pointer">All Products</span>
               </Link>
             </li>
-          </ul>
-        </div>
-
-        {/* Category Section */}
-        <div>
-          <h1 className="text-white text-lg font-semibold">Category</h1>
-          <ul className="mt-4 space-y-2 text-sm text-white">
-            <li>Crockery</li>
-            <li>Furniture</li>
-            <li>Homeware</li>
-            <li>Plants pot</li>
-            <li>Chair</li>
           </ul>
         </div>
 
@@ -51,30 +37,31 @@ const Footer = () => {
           <h1 className="text-white text-lg font-semibold">Our Company</h1>
           <ul className="mt-4 space-y-2 text-sm text-white">
             <li>
-              <Link href="/about" className="hover:underline">
-                About Us
+              <Link href="/about">
+                <span className="hover:underline cursor-pointer">About Us</span>
               </Link>
             </li>
-            <li>Vacancies</li>
-            <li>Contact Us</li>
-            <li>Privacy</li>
-            <li>Return Policy</li>
+            <li>
+              <Link href="/contact">
+                <span className="hover:underline cursor-pointer">Contact Us</span>
+              </Link>
+            </li>
           </ul>
         </div>
 
         {/* Mailing List Section */}
         <div>
-          <h1 className="text-white text-lg font-semibold">
-            Join our mailing list
-          </h1>
-          <div className="mt-5">
+          <h1 className="text-white text-lg font-semibold">Join our mailing list</h1>
+          <div className="mt-5 flex items-center gap-2">
             <input
               type="email"
               placeholder="you@gmail.com"
-              className="bg-gray-500 w-full h-12 p-4 rounded-md text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="bg-gray-500 flex-1 h-10 p-4 rounded-md text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button className="bg-white w-full sm:w-auto mt-3 h-12 px-6 text-sm font-semibold rounded-md hover:bg-gray-200 transition">
-              Sign Up
+            <button
+              className="bg-white h-10 px-6 text-sm font-semibold rounded-md hover:bg-gray-200 transition"
+            >
+              SignUp
             </button>
           </div>
         </div>
@@ -84,7 +71,7 @@ const Footer = () => {
       <div className="border-t-2 border-gray-700 mt-8 pt-6 px-5 sm:px-20 flex flex-wrap justify-between items-center">
         {/* Copyright Text */}
         <p className="text-white text-sm text-center sm:text-left w-full sm:w-auto">
-          © 2022 Avion LTD. All Rights Reserved.
+          &copy; 2022 Avion LTD. All Rights Reserved.
         </p>
 
         {/* Social Media Icons */}
@@ -97,7 +84,7 @@ const Footer = () => {
           <FaPinterest className="text-white text-2xl hover:text-red-500 transition" />
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import Link from "next/link";
@@ -53,7 +52,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node) && !menuOpen) {
         setDropdownOpen(false);
       }
     };
@@ -62,7 +61,7 @@ const Header = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [menuOpen]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -138,40 +137,37 @@ const Header = () => {
         <h1 className="text-[#22202E] text-2xl font-semibold">Avion</h1>
         <MdMenu className="text-2xl cursor-pointer" onClick={toggleMenu} />
       </div>
-
-      {/* Move Search Bar Outside the Mobile Menu */}
-      <div className="lg:hidden w-full flex justify-center py-2">
-        <div className="flex gap-2 items-center relative" ref={searchRef}>
-          <IoSearch className="text-xl" />
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={handleSearch}
-            placeholder="Search products..."
-            className="border rounded-md p-2 w-60 focus:outline-none text-sm"
-          />
-          {dropdownOpen && searchTerm && (
-            <div className="absolute top-12 left-0 bg-white shadow-lg rounded-md w-60 p-2 z-50">
-              {filteredProducts.length > 0 ? (
-                <ul>
-                  {filteredProducts.map((product) => (
-                    <li key={product._id} className="p-1 hover:bg-gray-200">
-                      <Link href={`/products/${product.slug.current}`}>
-                        {product.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-sm text-gray-500">No products found</p>
+      {menuOpen && (
+        <div className="absolute top-full left-0 w-full bg-black text-white shadow-md p-4 z-10">
+          <div className="mb-4">
+            <div className="flex gap-2 items-center relative" ref={searchRef}>
+              <IoSearch className="text-xl" />
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={handleSearch}
+                placeholder="Search products..."
+                className="border rounded-md p-2 w-full focus:outline-none text-sm"
+              />
+              {dropdownOpen && searchTerm && (
+                <div className="absolute top-12 left-0 bg-white shadow-lg rounded-md w-full p-2 z-50">
+                  {filteredProducts.length > 0 ? (
+                    <ul>
+                      {filteredProducts.map((product) => (
+                        <li key={product._id} className="p-1 hover:bg-gray-200">
+                          <Link href={`/products/${product.slug.current}`}>
+                            {product.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-gray-500">No products found</p>
+                  )}
+                </div>
               )}
             </div>
-          )}
-        </div>
-      </div>
-
-      {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md p-4 z-10">
+          </div>
           <nav className="flex flex-col gap-4">
             <Link href="/" className="hover:text-[#5a526c]">
               Home
@@ -184,6 +180,9 @@ const Header = () => {
             </Link>
             <Link href="/about" className="hover:text-[#5a526c]">
               About
+            </Link>
+            <Link href="/contact" className="hover:text-[#5a526c]">
+              Contact Us
             </Link>
           </nav>
         </div>
@@ -204,6 +203,9 @@ const Header = () => {
           <Link href="/about" className="hover:text-[#5a526c]">
             About
           </Link>
+          <Link href="/contact" className="hover:text-[#5a526c]">
+            Contact Us
+          </Link>
         </nav>
       </div>
     </header>
@@ -211,3 +213,17 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
