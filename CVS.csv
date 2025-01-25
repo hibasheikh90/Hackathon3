@@ -1,0 +1,7 @@
+Test Case ID,Test Description,Steps,Expected,Actual,Status,Severity,Assigned,Remarks
+TC001,Verify Product Page,Open product page,Page displays product details,Displayed correctly,Passed,Low,Ameen,Success
+TC002,Add to Cart,Click 'Add to Cart',Product added to cart,Added,Passed,Low,Ameen,Success
+TC003,Price Display,Open product page,Price visible correctly,Visible,Passed,Low,Ameen,Success
+TC004,Empty Cart,Go to cart,Cart shows '0 items',Shows '0 items',Passed,Low,Ameen,Success
+TC005,Add Multiple to Cart,Add 2 products,Cart shows 2 items,2 items,Passed,Low,Ameen,Success
+TC006,Checkout Process,Proceed to checkout,Checkout works smoothly,Completed,Passed,High,Ameen,Success
