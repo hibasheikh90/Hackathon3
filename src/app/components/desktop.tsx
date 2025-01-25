@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Desktop = () => {
   return (
@@ -20,7 +21,7 @@ const Desktop = () => {
         </div>
         <div className="mt-6 lg:mt-10">
           <button className="w-[150px] h-[56px] bg-[#f9f9f9] text-sm lg:text-base font-[Satoshi] font-normal px-6 py-3 rounded mt-5 hover:bg-gray-200">
-            Get in touch
+            <Link href="/contact"> Get in touch</Link>
           </button>
         </div>
       </div>
