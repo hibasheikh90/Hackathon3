@@ -135,6 +135,7 @@ const Header = () => {
       {/* Mobile Menu */}
       <div className="lg:hidden flex w-full justify-between items-center h-1/2">
         <h1 className="text-[#22202E] text-2xl font-semibold">Avion</h1>
+        
         <MdMenu className="text-2xl cursor-pointer" onClick={toggleMenu} />
       </div>
       {menuOpen && (
