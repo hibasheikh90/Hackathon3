@@ -47,6 +47,9 @@ Performed User Acceptance Testing (UAT) to ensure the platform met user expectat
 
 Day 6: Deployment and Final Documentation
 Pushed the project to Git and deployed it to Vercel for production.
+
+
+Website link: hackathon3-amber.vercel.app
 Completed the final documentation, including the API specifications and functionality descriptions.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
