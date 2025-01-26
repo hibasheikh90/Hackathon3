@@ -9,13 +9,18 @@ Documented the overall process flow, including defining the project's objectives
 
 Created the initial project structure, focusing on setting up the development environment and tools.
 
-Social Media:
 
-The day’s progress was shared on LinkedIn.
+
+
+
 Day 2: Technical Documentation
 Defined the technical requirements for the project, including the software stack and dependencies.
 Designed the system architecture, including database design, API structure, and integration points.
 Documented the API requirements for managing products, placing orders, and shipment tracking.
+
+
+
+
 Day 3: API Integration and Data Fetching
 Integrated the Sanity API for data management.
 Uploaded the product data into Sanity and set up a migration utility for data migration.
@@ -31,6 +36,8 @@ Day 5: Testing and Error Handling
 Performed functional testing on the website, including API testing.
 Conducted User Acceptance Testing (UAT) to ensure the system meets business requirements.
 Implemented error handling for API responses and user interactions.
+
+
 Day 5: Testing, Error Handling, and UAT
 Date: 20-01-2025
 Activities:
